@@ -41,3 +41,7 @@ class StudentRecords {
 
 
 }
+
+fun main() {
+
+}
