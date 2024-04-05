@@ -22,6 +22,23 @@ class BinarySearchTree {
         }
         return node
     }
+    fun searchNode(data: Int): Boolean {
+        return searchTree(data,root)
+    }
+    private fun searchTree(data: Int, node: TreeNode?): Boolean {
+        if (node == null) {
+            return false
+        }
+        else if (data == node.data) {
+            return true
+        }
+        else if (data > node.data) {
+            return searchTree(data, node.right)
+        }
+        else {
+            return searchTree(data, node.left)
+        }
+    }
     fun inOrderTraversal() {
         traverseNode(root)
     }
@@ -32,11 +49,28 @@ class BinarySearchTree {
             traverseNode(node.right)
 
         }
-
+    }
+    fun postOrderTraversal() {
+        postOrder(root)
+    }
+    private fun postOrder(node: TreeNode?) {
+        if (node != null) {
+            postOrder(node.left)
+            postOrder(node.right)
+            print("${node.data} ")
+        }
+    }
+    fun preOrderTraversal() {
+        preOrder(root)
+    }
+    private fun preOrder(node: TreeNode?) {
+        if (node != null) {
+            print("${node.data} ")
+            preOrder(node.left)
+            preOrder(node.right)
+        }
     }
 
-//    search
-//    traversal: inorder
 }
 
 
