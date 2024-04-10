@@ -20,6 +20,23 @@ class BST{
         }
         return nodes.first()
     }
+    var dict = mutableMapOf<Char,String>()
+    var str = ""
+
+    fun preOrderTraversal(characters:Map<Char,Int>) {
+        val first = buildHuffmanTree(characters)
+        preOrder(first)
+    }
+    private fun preOrder(node: TN?) {
+        if (node!= null) {
+            dict.put(node.char,str)
+            preOrder(node.left)
+            str + "0"
+            preOrder(node.right)
+            str + "1"
+        }
+    }
+
 
 }
 
