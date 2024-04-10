@@ -15,6 +15,8 @@ class BST{
             mergedNode.left = leftNode
             mergedNode.right = rightNode
 
+            nodes.add(mergedNode)
+
         }
         return nodes.first()
     }
